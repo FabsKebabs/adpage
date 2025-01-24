@@ -3,39 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Page</title>
+    <meta name="description" content="Welcome to our website! Explore engaging content while supporting us with ads.">
+    <meta name="keywords" content="content, ads, support, website">
+    <meta name="author" content="Your Name">
+    <title>Welcome to Our Website</title>
     <!-- Google AdSense Verification Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5196514011677170" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f9f9f9;
-        }
-        h1 {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
             color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
         }
         .ad-container {
-            margin: 20px auto;
-            max-width: 300px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Ad Page</h1>
-    <p>Enjoy the content while supporting us with ads below:</p>
+    <header>
+        <h1>Welcome to Our Website</h1>
+        <p>Your source for engaging content and more.</p>
+    </header>
+    <main>
+        <p>Thank you for visiting our website. We value your support and appreciate you exploring our content. Below, you'll find advertisements that help us keep our platform running.</p>
+        
+        <!-- Google AdSense Ad -->
+        <div class="ad-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="pub-5196514011677170"
+                 data-ad-slot="7116464230"
+                 data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
 
-    <!-- Google AdSense Ad -->
-    <div class="ad-container">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="pub-5196514011677170"
-             data-ad-slot="7116464230"
-             data-ad-format="auto"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
+        <p>We aim to provide valuable content while maintaining a user-friendly experience. Check out our <a href="#">latest posts</a> or <a href="#">contact us</a> for inquiries.</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 Your Website Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
