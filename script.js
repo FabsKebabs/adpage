@@ -140,3 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Redirect from /congrats.html to /congrats
+if (window.location.pathname === "/congrats.html") {
+  window.location.replace("/congrats");
+}
+
+if (window.location.pathname === "/index.html") {
+  window.location.replace("/");
+}
