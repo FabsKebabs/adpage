@@ -179,6 +179,36 @@ if (subscribeBtn) {
     const submitBtn = document.getElementById('submitUsername');
     const loadingText = document.getElementById('loadingText');
     
+ // Send data to Google Sheets using the Apps Script URL
+ const url = 'https://script.google.com/macros/s/AKfycbzZGURrLGLzDSMeyMz2GkhwEgDPYtfRD1xhyp39b-iToJA1N8MYkeVP_xe1-f8T2HIx6w/exec'; // Replace with your URL
+ const data = {
+   discordUsername: discordUsername,
+   userEmail: userEmail,
+   tosChecked: tosChecked
+ };
+
+ fetch(url, {
+   method: 'POST',
+   body: new URLSearchParams(data),
+   headers: {
+     'Content-Type': 'application/x-www-form-urlencoded'
+   }
+ })
+ .then(response => response.text())
+ .then(response => {
+   console.log('Success:', response);
+   loadingText.innerHTML = 'Submitted successfully!';
+   setTimeout(() => {
+     loadingText.style.display = 'none';
+     modal.style.display = 'none'; // Close the modal after successful submission
+   }, 2000);
+ })
+ .catch(error => {
+   console.error('Error:', error);
+   loadingText.innerHTML = 'Submission failed. Please try again.';
+ });
+
+
     submitBtn.disabled = true;
     loadingText.style.display = 'block';
     loadingText.textContent = 'Adding entry to database...';
