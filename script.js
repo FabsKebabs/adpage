@@ -218,7 +218,7 @@ if (subscribeBtn) {
       setTimeout(() => {
         loadingText.textContent = 'Done!';
         setTimeout(() => {
-          window.location.href = './congrats.html';
+          window.location.href = './congrats';
         }, 2000);
       }, 2000);
     }, 2000);
@@ -238,7 +238,7 @@ if (window.location.pathname === "/congrats.html") {
   window.location.replace("/congrats");
 }
 
-if (window.location.pathname === "/index.html") {
+if (window.location.pathname === "./index") {
   window.location.replace("/");
 }
 
