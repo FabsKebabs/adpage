@@ -234,7 +234,7 @@ if (subscribeBtn) {
 });
 
 // Redirect from /congrats.html to /congrats
-if (window.location.pathname === "/congrats.html") {
+if (window.location.pathname === "/congrats") {
   window.location.replace("/congrats");
 }
 
