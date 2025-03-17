@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-// Subscribe button
+  // Subscribe button
 const subscribeBtn = document.querySelector('#channel .cyber-button');
 if (subscribeBtn) {
   subscribeBtn.addEventListener('click', () => {
@@ -138,8 +138,69 @@ if (subscribeBtn) {
   const giveawayBtn = document.querySelector('.cta-section .cyber-button');
   if (giveawayBtn) {
     giveawayBtn.addEventListener('click', () => {
+      const modal = document.getElementById('usernameModal');
+      modal.style.display = 'flex';
+      requestAnimationFrame(() => {
+        modal.classList.add('show');
+      });
     });
   }
+
+  // Email validation function
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  document.getElementById('submitUsername').addEventListener('click', () => {
+    const discordUsername = document.getElementById('discordUsername').value;
+    const userEmail = document.getElementById('userEmail').value;
+    const tosChecked = document.getElementById('tosCheckbox').checked;
+    
+    // Reset error messages
+    document.getElementById('emailError').style.display = 'none';
+    document.getElementById('tosError').style.display = 'none';
+    
+    let hasError = false;
+    
+    if (!isValidEmail(userEmail)) {
+      document.getElementById('emailError').style.display = 'block';
+      hasError = true;
+    }
+    
+    if (!tosChecked) {
+      document.getElementById('tosError').style.display = 'block';
+      hasError = true;
+    }
+
+    if (!discordUsername.trim() || hasError) {
+      return;
+    }
+    
+    const submitBtn = document.getElementById('submitUsername');
+    const loadingText = document.getElementById('loadingText');
+    
+    submitBtn.disabled = true;
+    loadingText.style.display = 'block';
+    loadingText.textContent = 'Adding entry to database...';
+    
+    setTimeout(() => {
+      loadingText.textContent = 'Wait...';
+      setTimeout(() => {
+        loadingText.textContent = 'Done!';
+        setTimeout(() => {
+          window.location.href = './congrats.html';
+        }, 2000);
+      }, 2000);
+    }, 2000);
+  });
+
+  document.querySelector('.close-modal').addEventListener('click', () => {
+    const modal = document.getElementById('usernameModal');
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300);
+  });
 });
 
 // Redirect from /congrats.html to /congrats
@@ -150,3 +211,4 @@ if (window.location.pathname === "/congrats.html") {
 if (window.location.pathname === "/index.html") {
   window.location.replace("/");
 }
+
