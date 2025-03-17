@@ -126,12 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Subscribe button
-  const subscribeBtn = document.querySelector('#channel .cyber-button');
-  if (subscribeBtn) {
-    subscribeBtn.addEventListener('click', () => {
-    });
-  }
+// Subscribe button
+const subscribeBtn = document.querySelector('#channel .cyber-button');
+if (subscribeBtn) {
+  subscribeBtn.addEventListener('click', () => {
+    window.open('https://www.youtube.com/@PubzyD', '_blank'); // Open YouTube channel in a new tab
+  });
+}
 
   // Giveaway button
   const giveawayBtn = document.querySelector('.cta-section .cyber-button');
